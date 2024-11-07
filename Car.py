@@ -59,21 +59,20 @@ class Car:
     def __init_subclass__(self, acceleration, brake):
         self._acceleration = acceleration      
         self._brake = brake
-        Car.set_acceleration(5, print('Current speed is:'))
+        Car.get_speed(5, print('Current speed is:'))
 
     def set_acceleration(self, speed):
-        self.speed =  speed + 5 
+        self.speed = self.speed + 5 
 
     def get_acceleration(self, speed):
         return self._acceleration
 
 
     def set_brake(self, speed):
-        self.speed = speed - 5
+        self.speed = self.speed - 5
 
     def get_brake(self, speed):
-        print('Your speed is ', self.speed)
         return self._brake
 
-
 car = Car("1973", 'Ford', 'Bronco', 0)
+car.set_acceleration(print(car.get_speed()))
