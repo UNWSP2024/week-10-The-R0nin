@@ -21,14 +21,21 @@
 # to the brake method, get the current speed of the car and display it.
 
 class Car:
+
     loop = 0 
-    def __init__(self, year_model, make, speed):
-        self.__year_model = year_model
+    def __init__(self, year, model, make, speed):
+        self.__year = year
+        self.__model = model
         self.__make =  make
         self.__speed = speed
+        print('Your vehicle is a', year, model, make)
+
 #About the car
-    def set_year_model(self, year_model):
-        self.__year_model = year_model
+    def set_year(self, year):
+        self.__year = year
+
+    def set_model(self, model):
+        self.__model = model
 
     def set_make(self, make):
         self.__make =  make
@@ -36,26 +43,28 @@ class Car:
     def set_speed(self, speed):
         self.__speed = speed
 
-    def get_year_model(self):
-        return self.__year_model
+    def get_year(self):
+        return self.__year
     
+    def get_model(self):
+        return self.__model
+            
     def get_make(self):
         return self.__make
-    
+
     def get_speed(self):
-        return self.__speed
+        return self.__speed   
     
 #acceleration set up
     def __init_subclass__(self, acceleration, brake):
         self._acceleration = acceleration      
         self._brake = brake
-        Car.loop += 1 
+        Car.set_acceleration(5, print('Current speed is:'))
 
     def set_acceleration(self, speed):
         self.speed =  speed + 5 
 
     def get_acceleration(self, speed):
-        print('Current seep is:',self.__speed)
         return self._acceleration
 
 
@@ -63,5 +72,8 @@ class Car:
         self.speed = speed - 5
 
     def get_brake(self, speed):
-        print(self.__speed)
+        print('Your speed is ', self.speed)
         return self._brake
+
+
+car = Car("1973", 'Ford', 'Bronco', 0)
