@@ -27,7 +27,7 @@ class Car:
         self.__year = year
         self.__model = model
         self.__make =  make
-        self.__speed = speed
+        self.__speed = int(speed)
         print('Your vehicle is a', year, model, make)
 
 #About the car
@@ -62,17 +62,18 @@ class Car:
         Car.get_speed(5, print('Current speed is:'))
 
     def set_acceleration(self, speed):
-        self.speed = self.speed + 5 
+        self.speed = speed + 5 
 
     def get_acceleration(self, speed):
         return self._acceleration
 
 
     def set_brake(self, speed):
-        self.speed = self.speed - 5
+        self.speed = speed - 5
 
     def get_brake(self, speed):
         return self._brake
 
 car = Car("1973", 'Ford', 'Bronco', 0)
-car.set_acceleration(print(car.get_speed()))
+car.set_acceleration(5)
+print(car.get_speed())
