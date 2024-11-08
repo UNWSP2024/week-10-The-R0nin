@@ -22,7 +22,6 @@
 
 class Car:
 
-    loop = 0 
     def __init__(self, year, model, make, speed):
         self.__year = year
         self.__model = model
@@ -62,7 +61,7 @@ class Car:
         Car.get_speed(5, print('Current speed is:'))
 
     def set_acceleration(self, speed):
-        self.speed = speed + 5 
+        self.__speed = speed + 5 
 
     def get_acceleration(self, speed):
         return self._acceleration
