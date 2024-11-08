@@ -23,7 +23,7 @@ class employee:
         #employee.count += 1
 
     def display(self):
-        print(self._name, self._ID, self._department, self._title)
+        return self._name, self._ID, self._department, self._title
         
 
 emp1 = employee('Susan Meyers', '47899', 'Accounting', 'Vice President')
